@@ -1,0 +1,14 @@
+/amplify/*
+/coverage/*
+/build/*
+/dist/*
+/node_modules/*
+/public/*
+/src/base-data/*
+/src/graphql/*
+/src/models/*
+/src/Pages/Utils/*
+/src/ui-components/*
+/src/aws-exports.js
+*.css
+*.svg

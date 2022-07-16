@@ -1,0 +1,40 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-checkout-dev-110307-authRole",
+      "UnauthRoleArn": "arn:aws:iam::494458123866:role/amplify-checkout-dev-110307-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::494458123866:role/amplify-checkout-dev-110307-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-checkout-dev-110307-deployment",
+      "UnauthRoleName": "amplify-checkout-dev-110307-unauthRole",
+      "StackName": "amplify-checkout-dev-110307",
+      "StackId": "arn:aws:cloudformation:us-east-1:494458123866:stack/amplify-checkout-dev-110307/060bddd0-0510-11ed-9be7-0e3925a4b9ed",
+      "AmplifyAppId": "dv3rdfsrdkacd",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-checkout-dev-110307-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "checkout": {},
+        "true": {},
+        "userPoolGroups": {}
+      },
+      "function": {
+        "checkoutPostConfirmation": {
+          "GROUP": "store",
+          "deploymentBucketName": "amplify-checkout-dev-110307-deployment",
+          "s3Key": "amplify-builds/checkoutPostConfirmation-483445346c3470583374-build.zip"
+        },
+        "AdminQueries9256b2b5": {
+          "deploymentBucketName": "amplify-checkout-dev-110307-deployment",
+          "s3Key": "amplify-builds/AdminQueries9256b2b5-2f6d434368632b58554c-build.zip"
+        }
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dv3rdfsrdkacd",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}

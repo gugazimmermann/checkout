@@ -1,0 +1,54 @@
+type Category @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  Products: [Product] @hasMany(indexName: "byCategory", fields: ["id"])
+}
+
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  description: String!
+  price: Float!
+  discount: Int
+  categoryID: ID! @index(name: "byCategory")
+  Images: [Image] @hasMany(indexName: "byProduct", fields: ["id"])
+  Ratings: [Rating] @hasMany(indexName: "byProduct", fields: ["id"])
+  Wishes: [Wish] @hasMany(indexName: "byProduct", fields: ["id"])
+}
+
+type Image @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  productID: ID @index(name: "byProduct")
+}
+
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String!
+  email: String!
+  areaCode: String
+  phone: String
+  zip: String
+  state: String
+  city: String
+  street: String
+  number: String
+  avatar: String
+  Ratings: [Rating] @hasMany(indexName: "byUser", fields: ["id"])
+  Wishes: [Wish] @hasMany(indexName: "byUser", fields: ["id"])
+  cookie: Boolean
+}
+
+type Wish @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  productID: ID! @index(name: "byProduct")
+}
+
+type Rating @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  stars: Int!
+  comment: String
+  productID: ID! @index(name: "byProduct")
+  userID: ID! @index(name: "byUser")
+} 
